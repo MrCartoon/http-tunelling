@@ -1,0 +1,12 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt/
+    environment:
+      HOST:
+      LETSENCRYPT_EMAIL:
+      CLOUDFLARE_TOKEN:
